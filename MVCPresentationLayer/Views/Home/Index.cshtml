@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+    <br />
+    <h1>The Native Gardener</h1>
+    <br />
+</div>
+<div style="padding-left:100px;">
+    <br />
+    <img src="~/images/painting_homepage.jpg" alt="Flowers and Butterfly Painting" style="width:898px;height:326px;" />
+</div>
+<br />
+<div style="padding-left:100px;">
+    <h3>Find the right plants for your garden</h3><br />
+</div>
+<div style="padding-left:100px;">
+    <h3>Create a habitat for beneficial insects</h3><br />
+</div>
+<div style="padding-left:100px;">
+    <h3>Help preserve native species</h3><br /><br /><br />
+</div>
+<div class="text-center">
+    @Html.ActionLink("Search For Plants", "SearchPlants", null, new { @class = "btn btn-primary" })
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    @Html.ActionLink("Search For Insects", "SearchInsects", null, new { @class = "btn btn-primary" })
+</div>
+
+

@@ -1,0 +1,74 @@
+﻿@model IEnumerable<DataObjects.Plant>
+
+@{
+    ViewBag.Title = "Contributors";
+}
+
+<h2>Complete List of Plants</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.CommonName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ScientificName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GrowingZone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SoilType)
+        </th>
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Care)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PlantID)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.Active)
+        </th>*@
+        <th></th>
+    </tr>
+
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CommonName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ScientificName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoilType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GrowingZone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Care)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlantID)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Active)
+            </td>*@
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PlantID }) |
+                @Html.ActionLink("Details", "Details", new { Id = item.PlantID }, null) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PlantID })
+            </td>
+        </tr>
+    }
+
+</table>
+

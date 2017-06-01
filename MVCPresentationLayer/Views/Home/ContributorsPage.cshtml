@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "ContributorsPage";
+}
+
+<br />
+<h1>ContributorsPage</h1>
+<br />
+<h2>Welcome!</h2>
+<div style="padding-left:200px;">
+    <img src="~/images/lunamoth.jpg" alt="Zone Map" style="width:450px;height:300px;" />
+</div>
+<br />
+<h3>Use this page to add or update plant and insect information.</h3>
+<br /><br /><br />
+<div class="text-center" style="padding-right:165px">
+    @Html.ActionLink("Add or Edit Plants", "Contributors", "Plants", null, new { @class = "btn btn-primary" })
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+    @Html.ActionLink("Add or Edit Insects", "Contributors", "Insects", null, new { @class = "btn btn-primary" })
+</div>
+

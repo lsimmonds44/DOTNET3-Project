@@ -1,0 +1,87 @@
+﻿<Window x:Class="ZombieVeggieTales.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ZombieVeggieTales"
+        Title="Welcome to the Native Gardener" Height="625" Width="875">
+    <Grid Background="{DynamicResource {x:Static SystemColors.ControlBrushKey}}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="1" Background="{DynamicResource {x:Static SystemColors.ControlLightBrushKey}}">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+        </Grid>
+        <TabControl x:Name="tabconMain" Grid.Row="2" Margin="0,55,0,10" Grid.RowSpan="2">
+            <TabItem Name="tabViewPlants" Header="View Plants" HorizontalAlignment="Left" Height="Auto" Padding="5 3" Margin="0" VerticalAlignment="Center" Width="100" GotFocus="tabViewPlants_GotFocus">
+                <Canvas>
+                    <Grid Background="#FFE5E5E5">
+                        <DataGrid Name="dgViewPlants" GridLinesVisibility="Horizontal" 
+                              AlternatingRowBackground="#FFE5E37F" RowBackground="#FFBAABE8" 
+                              MouseDoubleClick="dgViewPlants_MouseDoubleClick" 
+                              IsSynchronizedWithCurrentItem="True" SelectionMode="Single" 
+                              CanUserReorderColumns="False" 
+                              ItemsSource="{Binding}" CanUserDeleteRows="False" IsReadOnly="True" />
+                    </Grid>
+                    <!--<Button x:Name="btnViewPlants" Content="View Plants" HorizontalAlignment="Left" Margin="704,429,0,0" VerticalAlignment="Top" Width="100" Height="25" Click="btnAddPlant_Click" FontSize="12" Grid.Column="5" FontWeight="Bold"/>-->
+                </Canvas>
+            </TabItem>
+            <TabItem Name="tabViewInsects" Header="View Insects" HorizontalAlignment="Left" Height="Auto" Padding="5 3" Margin="0" VerticalAlignment="Center" Width="100">
+                <Button x:Name="btnViewInsects" Content="View Insects" HorizontalAlignment="Left" Margin="728,426,0,23" Width="100" Height="25" FontSize="12" FontWeight="Bold" RenderTransformOrigin="0.53,0.6"/>
+            </TabItem>
+            <TabItem Name="tabAddPlant" Header="Add a Plant" HorizontalAlignment="Left" Height="Auto" Padding="5 3" Margin="0" VerticalAlignment="Center" Width="100">
+                <Canvas>
+                    <DataGrid Name="dgAddPlant" ItemsSource="{Binding}" AutoGenerateColumns="False" SelectionMode="Single" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ContributorID" Binding="{Binding Commercial_Id}" Width="110"/>
+                            <DataGridTextColumn Header="Common Name" Binding="{Binding User_Id}" Width="110"/>
+                            <DataGridTextColumn Header="Scientific Name" Binding="{Binding IsApproved}" Width="120"/>
+                            <DataGridTextColumn Header="Soil Type" Binding="{Binding ApprovedBy}" Width="100"/>
+                            <DataGridTextColumn Header="Growing Zone" Binding="{Binding FedTaxId}" Width="110"/>
+                            <DataGridTextColumn Header="Description" Binding="{Binding Active}" Width="110"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                    <!--<Button x:Name="btnAddPlant" Content="Add a Plant" HorizontalAlignment="Left" Margin="704,429,0,0" VerticalAlignment="Top" Width="100" Height="25" Click="btnAddPlant_Click" FontSize="12" Grid.Column="5" FontWeight="Bold"/>-->
+                </Canvas>
+            </TabItem>
+            <TabItem Name="tabAddInsect" Header="Add an Insect" HorizontalAlignment="Left" Height="Auto" Padding="5 3" Margin="0" VerticalAlignment="Center" Width="100">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="57*"/>
+                        <ColumnDefinition Width="194*"/>
+                        <ColumnDefinition Width="610*"/>
+                    </Grid.ColumnDefinitions>
+                    <!--<Button x:Name="btnAddInsect" Content="Add an Insect" HorizontalAlignment="Left" Margin="476,433,0,0" VerticalAlignment="Top" Width="100" Height="25" FontSize="12" FontWeight="Bold" Grid.Column="2"/>-->
+                </Grid>
+            </TabItem>
+        </TabControl>
+        <StatusBar Grid.Row="3">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+            </Grid>
+            <StatusBarItem Grid.Column="0" Name="statusMessage" Content="Please log in to continue." Padding="10 4" VerticalAlignment="Top" FontSize="11" FontFamily="Segoe UI Semibold" FontWeight="Bold"></StatusBarItem>
+        </StatusBar>
+        <TextBox x:Name="txtUsername" HorizontalAlignment="Left" Height="20" Margin="618,20,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140" Grid.Row="2"/>
+        <TextBox x:Name="txtPassword" HorizontalAlignment="Left" Height="20" Margin="618,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="140" Grid.Row="2"/>
+        <Label x:Name="lblUsername" Content="Username" HorizontalAlignment="Left" Margin="553,14,0,0" VerticalAlignment="Top" Grid.RowSpan="3"/>
+        <Label x:Name="lblPassword" Content="Password" HorizontalAlignment="Left" Margin="553,40,0,0" VerticalAlignment="Top" Grid.Row="2"/>
+        <Button x:Name="btnLogin" Content="Log In" HorizontalAlignment="Left" Margin="763,20,0,0" VerticalAlignment="Top" Width="75" Grid.RowSpan="3"/>
+    </Grid>
+</Window>

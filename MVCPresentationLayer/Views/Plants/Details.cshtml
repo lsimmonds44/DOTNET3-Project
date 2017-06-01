@@ -1,0 +1,62 @@
+﻿@model DataObjects.Plant
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div style="font-size:17px">
+    <h4>Plant</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CommonName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.CommonName)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.ScientificName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.ScientificName)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.SoilType)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.SoilType)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.GrowingZone)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.GrowingZone)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.PlantID)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.PlantID)
+        </dd>
+        <br />
+        <dt>
+            @Html.DisplayNameFor(model => model.Care)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Care)
+        </dd>
+    </dl>
+    @*<div style="padding-left:35px;">
+        <img src="~/images/columbine.jpg" alt="Columbine" style="width:225px;height:338px;" />
+    </div>*@
+</div>
+<br />
+<p>
+    <a href="javascript:history.go(-1)">Back to List</a>
+</p>

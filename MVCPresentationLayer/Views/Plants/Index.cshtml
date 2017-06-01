@@ -1,0 +1,58 @@
+﻿@model IEnumerable<DataObjects.Plant>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Results</h2>
+<br />
+
+<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CommonName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ScientificName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GrowingZone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoilType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PlantID)
+            </th>
+            <th></th>
+        </tr>
+    </div>
+
+    @foreach (var item in Model)
+    {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CommonName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ScientificName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SoilType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.GrowingZone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PlantID)
+                </td>
+                <td>
+                    @Html.ActionLink("Details", "Details", new { Id = item.PlantID }, null)
+                </td>
+            </tr>
+    }
+
+</table>
+<div>
+    @Html.ActionLink("Search Again", "SearchPlants", "Home", null, new { @class = "btn btn-primary" })
+</div>
